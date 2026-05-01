@@ -1,22 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
 import { useI18n } from '../../app/providers'
 import { TECH_STACK, PROFILE_IMAGE } from '@/lib/constants'
 import { scrollToElement } from '@/lib/helpers/scroll'
 
 const Hero = () => {
   const { t } = useI18n()
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY })
-    }
-    window.addEventListener('mousemove', handleMouseMove)
-    return () => window.removeEventListener('mousemove', handleMouseMove)
-  }, [])
 
   return (
     <section
@@ -68,18 +58,14 @@ const Hero = () => {
               <span className="text-gradient">{t('hero.welcome')}</span>
             </motion.h1>
 
-            {/* Introducción breve */}
+            {/* Tagline profesional */}
             <motion.p
-              className="text-lg text-white/80 leading-relaxed"
+              className="text-lg md:text-xl text-white/60 tracking-wide"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              {t('hero.intro.part1')}
-              <span className="text-ghost-purple font-semibold">{t('hero.intro.unlock')}</span>
-              {t('hero.intro.part2')}
-              <span className="text-ghost-pink font-semibold">{t('hero.intro.hidden')}</span>
-              {t('hero.intro.part3')}
+              {t('hero.tagline')}
             </motion.p>
 
             {/* Stack de tecnologías */}
@@ -146,21 +132,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Elemento interactivo del mouse */}
-        <motion.div
-          className="absolute pointer-events-none"
-          style={{
-            left: mousePosition.x - 100,
-            top: mousePosition.y - 100,
-          }}
-          animate={{
-            x: (mousePosition.x - (typeof window !== 'undefined' ? window.innerWidth : 1920) / 2) * 0.02,
-            y: (mousePosition.y - (typeof window !== 'undefined' ? window.innerHeight : 1080) / 2) * 0.02,
-          }}
-          transition={{ type: "spring", stiffness: 150, damping: 20 }}
-        >
-          <div className="w-48 h-48 bg-gradient-to-r from-ghost-purple/20 to-ghost-pink/20 rounded-full blur-xl opacity-50"></div>
-        </motion.div>
       </div>
     </section>
   )

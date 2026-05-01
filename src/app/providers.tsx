@@ -128,15 +128,16 @@ const DICTIONARY = {
     },
 
     hero: {
-      welcome: "Bienvenido! ",
+      welcome: "Hola, soy Camila Bastidas",
+      tagline: "Desarrolladora Full Stack · Backend & APIs · IA Aplicada",
       intro: {
-        part1: "Este portafolio es una experiencia interactiva donde puedes ",
-        unlock: "desbloquear niveles",
-        part2: ", descubrir ",
-        hidden: "secciones ocultas",
-        part3: " ver el detalle de mi experiencia laboral y mi proceso de crecimiento personal.!"
+        part1: "",
+        unlock: "",
+        part2: "",
+        hidden: "",
+        part3: ""
       },
-      builtWith: "Construido con:",
+      builtWith: "Stack tecnológico:",
       strudel: {
         title: "Strudel Live Coding",
         description: "Experimenta con música generativa y live coding"
@@ -216,10 +217,12 @@ const DICTIONARY = {
       title: "Sobre Mí",
       greeting: "¡Hola! Soy",
       name: "Camila Bastidas",
-      bio: "Estudiante de Ingeniería de Software de 21 años, apasionada por crear experiencias digitales únicas que combinan tecnología, arte y creatividad.",
-      inspiration: "Mi inspiración para este portafolio viene de",
-      tetrisGames: "los video juegos retro",
-      inspirationEnd: "porque demuestran que la simplicidad puede ser la base para construir reliquias digitales genuinas y atemporales.",
+      bio: "Estudiante de sexto semestre de Ingeniería de Software en la Universidad Cooperativa de Colombia, con enfoque en desarrollo backend y construcción de soluciones tecnológicas de alta complejidad.",
+      bio2: "Cuento con experiencia en el diseño e implementación de APIs, manejo de bases de datos e integración de servicios en aplicaciones web y móviles. Me interesa especialmente la inteligencia artificial aplicada, habiendo trabajado en el entrenamiento de modelos y procesamiento de información.",
+      bio3: "Me destaco por mi organización, capacidad analítica y facilidad para comunicar ideas técnicas en inglés, lo que me permite trabajar en entornos colaborativos y adaptarme rápidamente a nuevos retos.",
+      inspiration: "",
+      tetrisGames: "",
+      inspirationEnd: "",
 
       interestsTitle: "✨ Mis Pasiones",
       interests: {
@@ -242,15 +245,15 @@ const DICTIONARY = {
       cards: {
         mission: {
           title: "Mi Misión",
-          description: "Transformar ideas creativas en soluciones digitales que inspiren y generen impacto real en la vida de las personas."
+          description: "Desarrollar soluciones digitales innovadoras que resuelvan problemas reales mientras crean experiencias memorables para los usuarios."
         },
         approach: {
           title: "Mi Enfoque",
-          description: "Combino el pensamiento lógico de la ingeniería con la creatividad del arte para crear experiencias web memorables."
+          description: "Combino arquitectura de software robusta con diseño centrado en el usuario, priorizando código limpio, accesible y escalable."
         },
         passion: {
           title: "Mi Pasión",
-          description: "Aprender constantemente, experimentar con nuevas tecnologías y crear proyectos que conecten la nostalgia retro con el futuro digital."
+          description: "Explorar tecnologías emergentes, contribuir a proyectos open source y construir aplicaciones que fusionen funcionalidad con creatividad visual."
         }
       }
     },
@@ -376,15 +379,16 @@ const DICTIONARY = {
     language: "Language",
   },
   hero: {
-    welcome: "Welcome!",
+    welcome: "Hi, I'm Camila Bastidas",
+    tagline: "Full Stack Developer · Backend & APIs · Applied AI",
     intro: {
-      part1: "This portfolio is a unique interactive experience where you can ",
-      unlock: "unlock levels",
-      part2: ", discover ",
-      hidden: "hidden sections",
-      part3: " and explore my projects in a gamified way. Every visit is an adventure!"
+      part1: "",
+      unlock: "",
+      part2: "",
+      hidden: "",
+      part3: ""
     },
-    builtWith: "Built with:",
+    builtWith: "Tech stack:",
     strudel: {
       title: "Strudel Live Coding",
       description: "Experience generative music and live coding"
@@ -462,10 +466,12 @@ const DICTIONARY = {
     title: "About Me",
     greeting: "Hi! I'm",
     name: "Camila Bastidas",
-    bio: "21-year-old Software Engineering student passionate about creating unique digital experiences that blend technology, art, and creativity.",
-    inspiration: "My inspiration comes from",
-    tetrisGames: "retro games",
-    inspirationEnd: "that taught me that simplicity can be extraordinary.",
+    bio: "Sixth-semester Software Engineering student at Universidad Cooperativa de Colombia, focused on backend development and building high-complexity technological solutions.",
+    bio2: "I have experience designing and implementing APIs, managing databases, and integrating services in web and mobile applications. I'm particularly interested in applied artificial intelligence, having worked on model training and information processing.",
+    bio3: "I stand out for my organization, analytical thinking, and ability to communicate technical ideas in English, which allows me to thrive in collaborative environments and adapt quickly to new challenges.",
+    inspiration: "",
+    tetrisGames: "",
+    inspirationEnd: "",
 
     interestsTitle: "✨ My Passions",
     interests: {
@@ -488,15 +494,15 @@ const DICTIONARY = {
     cards: {
       mission: {
         title: "My Mission",
-        description: "Transform creative ideas into digital solutions that inspire and generate real impact on people's lives."
+        description: "Develop innovative digital solutions that solve real problems while creating memorable experiences for users."
       },
       approach: {
         title: "My Approach",
-        description: "I combine the logical thinking of engineering with the creativity of art to create memorable web experiences."
+        description: "I combine robust software architecture with user-centered design, prioritizing clean, accessible, and scalable code."
       },
       passion: {
         title: "My Passion",
-        description: "Constantly learning, experimenting with new technologies, and creating projects that connect retro nostalgia with the digital future."
+        description: "Exploring emerging technologies, contributing to open source projects, and building applications that merge functionality with visual creativity."
       }
     }
   },

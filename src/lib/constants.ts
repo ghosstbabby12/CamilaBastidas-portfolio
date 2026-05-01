@@ -51,7 +51,6 @@ export const NAV_ITEMS = [
   { href: '#about', labelKey: 'nav.about' },
   { href: '#projects', labelKey: 'nav.projects' },
   { href: '#experience', labelKey: 'nav.experience' },
-  { href: '#mygame', labelKey: 'nav.mygame' },
   { href: '#galeria', labelKey: 'nav.gallery' },
   { href: '#testimonials', labelKey: 'nav.testimonials' },
   { href: '#contact', labelKey: 'nav.contact' }

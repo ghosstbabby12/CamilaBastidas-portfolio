@@ -5,7 +5,7 @@ import { useRef } from 'react'
 import { Heart } from 'lucide-react'
 import { useI18n, useTheme } from '../../app/providers'
 import { useRouter } from 'next/navigation'
-import { interests, techCategories, stats, cards } from '@/lib/data/about'
+import { interests, techCategories, languages } from '@/lib/data/about'
 import { PROFILE_IMAGE } from '@/lib/constants'
 import { scrollToElement } from '@/lib/helpers/scroll'
 
@@ -97,15 +97,18 @@ const About = () => {
               </motion.div>
 
               {/* Texto sobre ti */}
-              <div className="flex-1 text-center md:text-left">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              <div className="flex-1 text-center md:text-left space-y-4">
+                <h3 className="text-2xl md:text-3xl font-bold text-white">
                   {t('about.greeting')} <span className="text-gradient">{t('about.name')}</span>
                 </h3>
-                <p className="text-lg text-white/80 leading-relaxed mb-4">
+                <p className="text-base text-white/80 leading-relaxed">
                   {t('about.bio')}
                 </p>
-                <p className="text-white/70">
-                  {t('about.inspiration')} <span className="text-ghost-purple font-semibold">{t('about.tetrisGames')}</span> {t('about.inspirationEnd')}
+                <p className="text-base text-white/70 leading-relaxed">
+                  {t('about.bio2')}
+                </p>
+                <p className="text-base text-white/70 leading-relaxed">
+                  {t('about.bio3')}
                 </p>
               </div>
             </div>
@@ -177,61 +180,45 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Estadísticas */}
-          <motion.div variants={itemVariants}>
+          {/* Idiomas */}
+          <motion.div variants={itemVariants} className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
-              <span className="text-gradient">{t('about.statsTitle')}</span>
+              <span className="text-gradient">Idiomas</span>
             </h3>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  className="glass-effect rounded-2xl p-6 text-center group cursor-pointer card-hover"
-                  whileHover={{ scale: 1.05 }}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={
-                    isInView
-                      ? { opacity: 1, scale: 1 }
-                      : { opacity: 0, scale: 0 }
-                  }
-                  transition={{
-                    duration: 0.6,
-                    delay: 0.8 + index * 0.1,
-                    type: "spring",
-                    stiffness: 100,
-                  }}
-                >
-                  <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
-                    {stat.number}
+            <div className="glass-effect rounded-3xl p-6 md:p-8 space-y-6">
+              {languages.map((lang) => (
+                <div key={lang.name}>
+                  <div className="flex items-baseline justify-between mb-2">
+                    <div className="flex items-center gap-3">
+                      <span className="text-lg font-bold text-white/90 tracking-wide uppercase">
+                        {lang.name}
+                      </span>
+                      {lang.cert && (
+                        <span className="text-xs px-2 py-0.5 rounded-full border border-ghost-purple/40 text-ghost-purple font-medium tracking-wider">
+                          {lang.cert}
+                        </span>
+                      )}
+                    </div>
+                    <span className="text-sm font-semibold text-white/50 tracking-widest uppercase">
+                      {lang.level}
+                    </span>
                   </div>
-                  <div className="text-sm text-white/70 group-hover:text-white transition-colors duration-300">
-                    {t(stat.labelKey)}
+
+                  <div className="relative h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                    <motion.div
+                      className="absolute inset-y-0 left-0 rounded-full bg-ghost-purple"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${lang.percent}%` }}
+                      transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
+                      viewport={{ once: true }}
+                    />
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Misión y valores */}
-          <motion.div variants={itemVariants} className="mt-16 grid md:grid-cols-3 gap-6">
-            {cards.map((card, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-                className="glass-effect rounded-2xl p-6 card-hover"
-              >
-                <div className="text-4xl mb-4">{card.emoji}</div>
-                <h4 className="text-xl font-bold text-gradient mb-3">
-                  {t(card.titleKey)}
-                </h4>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {t(card.descriptionKey)}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
         </motion.div>
       </div>
     </section>

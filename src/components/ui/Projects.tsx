@@ -4,9 +4,12 @@ import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import { useI18n } from "../../app/providers";
 import { personalProjects, academicProjects, type Project } from "@/lib/data/projects";
+import Link from "next/link";
 
 const Projects = () => {
   const { t } = useI18n();
+
+  const isInternalLink = (url: string) => url.startsWith('/');
 
   const container = {
     hidden: { opacity: 0 },
@@ -107,18 +110,32 @@ const Projects = () => {
                     <span>{t('projects.code')}</span>
                   </motion.a>
                   {project.liveUrl && (
-                    <motion.a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group relative flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-ghost-purple text-ghost-purple hover:text-white transition-all duration-300 overflow-hidden"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <div className="absolute inset-0 bg-card-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                      <ExternalLink size={18} />
-                      <span>{t('projects.demo')}</span>
-                    </motion.a>
+                    isInternalLink(project.liveUrl) ? (
+                      <Link href={project.liveUrl} passHref legacyBehavior>
+                        <motion.a
+                          className="group relative flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-ghost-purple text-ghost-purple hover:text-white transition-all duration-300 overflow-hidden"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <div className="absolute inset-0 bg-card-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                          <ExternalLink size={18} />
+                          <span>{t('projects.demo')}</span>
+                        </motion.a>
+                      </Link>
+                    ) : (
+                      <motion.a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center gap-2 px-4 py-2 rounded-lg border-2 border-ghost-purple text-ghost-purple hover:text-white transition-all duration-300 overflow-hidden"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <div className="absolute inset-0 bg-card-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                        <ExternalLink size={18} />
+                        <span>{t('projects.demo')}</span>
+                      </motion.a>
+                    )
                   )}
                 </div>
               </div>

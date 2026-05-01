@@ -112,6 +112,18 @@ export const techCategories: TechCategory[] = [
   }
 ]
 
+export interface Language {
+  name: string
+  level: string
+  percent: number
+  cert?: string
+}
+
+export const languages: Language[] = [
+  { name: 'Español', level: 'Nativo', percent: 100 },
+  { name: 'Inglés',  level: 'B1',     percent: 60, cert: 'Cambridge' },
+]
+
 export interface Stat {
   number: string
   labelKey: string

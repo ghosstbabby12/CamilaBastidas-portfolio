@@ -32,12 +32,12 @@ export const personalProjects: Project[] = [
   },
   {
     id: 3,
-    title: "Mini Juegos",
-    description: "Colección de mini juegos interactivos desarrollados con Canvas y JavaScript.",
-    technologies: ["Canvas API", "TypeScript", "Game Physics"],
+    title: "Mini Juegos Arcade",
+    description: "Colección de mini juegos retro (Pac-Man y Mario Bros) construidos desde cero con Canvas API y TypeScript, sin librerías de juegos externas.",
+    technologies: ["Canvas API", "TypeScript", "Next.js", "Game Physics"],
     image: "/projects/games.png",
-    githubUrl: "https://github.com/ghosstbabby12/ghostbabby-portfolio/tree/main/src/components",
-    liveUrl: "/arcade",
+    githubUrl: "https://github.com/ghosstbabby12/ghostbabby-arcade",
+    liveUrl: "https://ghostbabby-arcade.vercel.app",
     featured: false
   }
 ]
@@ -55,12 +55,12 @@ export const academicProjects: Project[] = [
   },
   {
     id: 2,
-    title: "Login Personalizado",
-    description: "Herramienta de análisis de redes sociales con métricas detalladas, reportes automáticos y visualización de datos.",
-    technologies: ["React", "D3.js", "Python", "FastAPI", "Redis"],
-    image: "/projects/LoginPersonal.png",
+    title: "Dashboard Epidemiológico Colombia",
+    description: "Dashboard interactivo de datos epidemiológicos de Colombia con visualización de métricas, mapas y estadísticas de salud pública por región.",
+    technologies: ["React", "D3.js", "Data Visualization", "Public Health API"],
+    image: "/projects/Dashboard.png",
     githubUrl: "https://github.com/ghosstbabby12/LoginPerzonalizado.git",
-    liveUrl: "https://login-perzonalizado.vercel.app",
+    liveUrl: "https://colombia-dash-board-epidemiologico.vercel.app/",
     featured: false
   },
   {

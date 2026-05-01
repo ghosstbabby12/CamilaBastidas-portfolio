@@ -9,7 +9,6 @@ import Projects from '@/components/ui/Projects'
 import Particles from '@/components/ui/Particles'
 import Contact from '@/components/ui/Contact'
 import Experience from '@/components/ui/Experience'
-import MyGame from '@/components/ui/MyGame'
 import Gallery from '@/components/ui/Gallery'
 import Testimonials from '@/components/ui/Testimonials'
 import ScrollToTopButton from '@/components/shared/ScrollToTopButton'
@@ -45,7 +44,6 @@ export default function Home() {
           <About />
           <Projects />
           <Experience />
-          <MyGame />
           <Gallery />
           <Testimonials />
           <Contact />
