@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { useI18n } from '../../app/providers'
+import { useI18n } from '@/app/providers'
 import { TECH_STACK, PROFILE_IMAGE } from '@/lib/constants'
-import { scrollToElement } from '@/lib/helpers/scroll'
+import { scrollToElement } from '@/lib/utils'
 
 const Hero = () => {
   const { t } = useI18n()
@@ -27,7 +27,7 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className="space-y-6 text-center"
           >
-            {/* Foto de perfil clickeable para ir a la sección de juegos */}
+            {/* Foto de perfil clickeable para ir a la sección de about */}
             <motion.a
               href="#about"
               className="inline-block cursor-pointer"

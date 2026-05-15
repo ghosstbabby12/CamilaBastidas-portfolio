@@ -16,16 +16,16 @@ interface CardProps {
   variant?: 'default' | 'glass' | 'glow' | 'minimal'
 }
 
-const Card = ({ 
-  children, 
-  className, 
+const Card = ({
+  children,
+  className,
   hover = true,
   gradient,
   onClick,
   delay = 0,
   variant = 'default'
 }: CardProps) => {
-  
+
   const getVariantStyles = () => {
     switch (variant) {
       case 'glass':
@@ -40,19 +40,19 @@ const Card = ({
   }
 
   const cardVariants: Variants = {
-    hidden: { 
-      opacity: 0, 
+    hidden: {
+      opacity: 0,
       y: 50,
       scale: 0.9
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       scale: 1,
       transition: {
         duration: 0.6,
         delay,
-        ease: easeInOut 
+        ease: easeInOut
       }
     },
     hover: {
@@ -88,7 +88,7 @@ const Card = ({
           gradient
         )}></div>
       )}
-      
+
       {/* Shimmer Effect */}
       <div className="absolute top-0 left-0 w-full h-full rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-[-100%] w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent group-hover:left-[100%] transition-all duration-1000"></div>
@@ -112,12 +112,12 @@ const Card = ({
 }
 
 // Card Header Component
-export const CardHeader = ({ 
-  children, 
-  className 
-}: { 
+export const CardHeader = ({
+  children,
+  className
+}: {
   children: ReactNode
-  className?: string 
+  className?: string
 }) => (
   <div className={cn("mb-4", className)}>
     {children}
@@ -125,12 +125,12 @@ export const CardHeader = ({
 )
 
 // Card Title Component
-export const CardTitle = ({ 
-  children, 
-  className 
-}: { 
+export const CardTitle = ({
+  children,
+  className
+}: {
   children: ReactNode
-  className?: string 
+  className?: string
 }) => (
   <h3 className={cn("text-xl font-semibold text-gradient mb-2", className)}>
     {children}
@@ -138,12 +138,12 @@ export const CardTitle = ({
 )
 
 // Card Description Component
-export const CardDescription = ({ 
-  children, 
-  className 
-}: { 
+export const CardDescription = ({
+  children,
+  className
+}: {
   children: ReactNode
-  className?: string 
+  className?: string
 }) => (
   <p className={cn("text-white/80 leading-relaxed", className)}>
     {children}
@@ -151,12 +151,12 @@ export const CardDescription = ({
 )
 
 // Card Footer Component
-export const CardFooter = ({ 
-  children, 
-  className 
-}: { 
+export const CardFooter = ({
+  children,
+  className
+}: {
   children: ReactNode
-  className?: string 
+  className?: string
 }) => (
   <div className={cn("mt-6 pt-4 border-t border-white/10", className)}>
     {children}
@@ -164,11 +164,11 @@ export const CardFooter = ({
 )
 
 // Card Icon Component
-export const CardIcon = ({ 
+export const CardIcon = ({
   icon: Icon,
   className,
   size = 24
-}: { 
+}: {
   icon: LucideIcon
   className?: string
   size?: number

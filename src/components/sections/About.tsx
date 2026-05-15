@@ -3,16 +3,13 @@
 import { motion, useInView, Variants } from 'framer-motion'
 import { useRef } from 'react'
 import { Heart } from 'lucide-react'
-import { useI18n, useTheme } from '../../app/providers'
-import { useRouter } from 'next/navigation'
-import { interests, techCategories, languages } from '@/lib/data/about'
+import { useI18n, useTheme } from '@/app/providers'
+import { techCategories } from '@/lib/data/about'
 import { PROFILE_IMAGE } from '@/lib/constants'
-import { scrollToElement } from '@/lib/helpers/scroll'
 
 const About = () => {
   const { t } = useI18n()
   const { actualTheme } = useTheme()
-  const router = useRouter()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -114,40 +111,6 @@ const About = () => {
             </div>
           </motion.div>
 
-          {/* Mis intereses */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
-              <span className="text-gradient">{t('about.interestsTitle')}</span>
-            </h3>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-              {interests.map((interest, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ y: -10, scale: 1.05 }}
-                  className="glass-effect rounded-2xl p-6 flex flex-col items-center gap-3 cursor-pointer group"
-                  onClick={() => {
-                    if (interest.link) {
-                      if (interest.link.startsWith('#')) {
-                        scrollToElement(interest.link)
-                      } else {
-                        router.push(interest.link)
-                      }
-                    }
-                  }}
-                >
-                  <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${interest.gradient} flex items-center justify-center group-hover:shadow-lg transition-all duration-300`}>
-                    <interest.icon className="w-7 h-7 text-white" />
-                  </div>
-                  <span className="text-sm text-white/80 group-hover:text-white transition-colors text-center">
-                    {t(interest.labelKey)}
-                  </span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
           {/* Tech Stack - Organizado y compacto */}
           <motion.div variants={itemVariants} className="mb-16">
             <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
@@ -174,45 +137,6 @@ const About = () => {
                         {tech.name}
                       </motion.div>
                     ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Idiomas */}
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl md:text-3xl font-bold text-center mb-8">
-              <span className="text-gradient">Idiomas</span>
-            </h3>
-
-            <div className="glass-effect rounded-3xl p-6 md:p-8 space-y-6">
-              {languages.map((lang) => (
-                <div key={lang.name}>
-                  <div className="flex items-baseline justify-between mb-2">
-                    <div className="flex items-center gap-3">
-                      <span className="text-lg font-bold text-white/90 tracking-wide uppercase">
-                        {lang.name}
-                      </span>
-                      {lang.cert && (
-                        <span className="text-xs px-2 py-0.5 rounded-full border border-ghost-purple/40 text-ghost-purple font-medium tracking-wider">
-                          {lang.cert}
-                        </span>
-                      )}
-                    </div>
-                    <span className="text-sm font-semibold text-white/50 tracking-widest uppercase">
-                      {lang.level}
-                    </span>
-                  </div>
-
-                  <div className="relative h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
-                    <motion.div
-                      className="absolute inset-y-0 left-0 rounded-full bg-ghost-purple"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${lang.percent}%` }}
-                      transition={{ duration: 1.2, ease: 'easeOut', delay: 0.2 }}
-                      viewport={{ once: true }}
-                    />
                   </div>
                 </div>
               ))}

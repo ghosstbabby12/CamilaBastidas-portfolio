@@ -35,8 +35,8 @@ const Section = ({
   stagger = 0.1
 }: SectionProps) => {
   const ref = useRef(null)
-  const isInView = useInView(ref, { 
-    once: true, 
+  const isInView = useInView(ref, {
+    once: true,
     margin: "-100px",
     amount: 0.2
   })
@@ -63,7 +63,7 @@ const Section = ({
   const getMaxWidthStyles = () => {
     const widthMap = {
       'sm': 'max-w-sm',
-      'md': 'max-w-md', 
+      'md': 'max-w-md',
       'lg': 'max-w-lg',
       'xl': 'max-w-xl',
       '2xl': 'max-w-2xl',
@@ -75,7 +75,6 @@ const Section = ({
     return widthMap[maxWidth]
   }
 
-  // 🔹 Variants tipados y corregidos
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -95,7 +94,7 @@ const Section = ({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: easeOut // ✅ función en lugar de string
+        ease: easeOut
       }
     }
   }
@@ -108,7 +107,7 @@ const Section = ({
       scale: 1,
       transition: {
         duration: 0.8,
-        ease: easeInOut // ✅ función en lugar de string
+        ease: easeInOut
       }
     }
   }
@@ -145,7 +144,7 @@ const Section = ({
       )}>
         {/* Section Title */}
         {title && (
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             variants={animate ? titleVariants : undefined}
           >

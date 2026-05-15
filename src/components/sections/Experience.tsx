@@ -1,13 +1,13 @@
 'use client'
 import { motion } from "framer-motion"
-import Section from "@/components/shared/Section"
-import { Briefcase, GraduationCap, Code, Award } from "lucide-react"
-import { useI18n, useTheme } from '../../app/providers'
+import Section from "@/components/ui/Section"
+import { Briefcase, GraduationCap, Code, Award, Trophy, Globe } from "lucide-react"
+import { useI18n, useTheme } from '@/app/providers'
 
 const Experience = () => {
   const { t } = useI18n()
   const { actualTheme } = useTheme()
-  
+
   const experiences = [
     {
       id: 1,
@@ -40,7 +40,20 @@ const Experience = () => {
       period: t('experience.items.achievements.period'),
       description: t('experience.items.achievements.description'),
       icon: <Award className="w-6 h-6 text-white" />
+    },
+    {
+      id: 5,
+      title: t('experience.items.competitions.title'),
+      company: t('experience.items.competitions.company'),
+      period: t('experience.items.competitions.period'),
+      description: t('experience.items.competitions.description'),
+      icon: <Trophy className="w-6 h-6 text-white" />
     }
+  ]
+
+  const languageItems = [
+    { name: t('experience.languages.items.spanish.name'), level: t('experience.languages.items.spanish.level'), percent: 100, badge: t('experience.languages.native'), inProgress: false },
+    { name: t('experience.languages.items.english.name'), level: t('experience.languages.items.english.level'), percent: 65, badge: t('experience.languages.inProgress'), note: t('experience.languages.items.english.note'), inProgress: true }
   ]
 
   return (
@@ -136,6 +149,61 @@ const Experience = () => {
           ))}
         </div>
       </div>
+
+      {/* Sección de idiomas */}
+      <motion.div
+        className="mt-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex items-center gap-3 mb-8 justify-center">
+          <Globe className="w-6 h-6 text-ghost-purple" />
+          <h3 className="text-2xl md:text-3xl font-bold text-gradient">
+            {t('experience.languages.title')}
+          </h3>
+        </div>
+
+        <div className="glass-effect rounded-3xl p-6 md:p-8 space-y-6 max-w-2xl mx-auto">
+          {languageItems.map((lang) => (
+            <div key={lang.name}>
+              <div className="flex items-baseline justify-between mb-2">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-lg font-bold text-white/90 tracking-wide uppercase">
+                    {lang.name}
+                  </span>
+                  <span className="text-xs px-2 py-0.5 rounded-full border border-ghost-purple/40 text-ghost-purple font-medium tracking-wider">
+                    {lang.level}
+                  </span>
+                  {lang.inProgress && (
+                    <span className="text-xs px-2 py-0.5 rounded-full bg-ghost-purple/20 text-ghost-purple font-semibold animate-pulse">
+                      {lang.badge}
+                    </span>
+                  )}
+                </div>
+                {!lang.inProgress && (
+                  <span className="text-sm font-semibold text-white/50 tracking-widest uppercase">
+                    {lang.badge}
+                  </span>
+                )}
+              </div>
+              {lang.note && (
+                <p className="text-xs text-white/40 mb-2 italic">{lang.note}</p>
+              )}
+              <div className="relative h-1.5 w-full rounded-full bg-white/10 overflow-hidden">
+                <motion.div
+                  className="absolute inset-y-0 left-0 rounded-full bg-ghost-purple"
+                  initial={{ width: 0 }}
+                  whileInView={{ width: `${lang.percent}%` }}
+                  transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
+                  viewport={{ once: true }}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </Section>
   )
 }

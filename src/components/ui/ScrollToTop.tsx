@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 import { ArrowUp } from 'lucide-react'
-import { scrollToTop } from '@/lib/helpers/scroll'
+import { scrollToTop } from '@/lib/utils'
 import { useI18n } from '@/app/providers'
 
-export default function ScrollToTopButton() {
+export default function ScrollToTop() {
   const { t } = useI18n()
 
   return (

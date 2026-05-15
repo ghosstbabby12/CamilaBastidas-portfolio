@@ -41,8 +41,8 @@ export const SOCIAL_LINKS = [
 ] as const
 
 export const PROFILE_IMAGE = {
-  hero: '/images/me15.jpeg',
-  about: '/images/me555.jpeg',
+  hero: '/images/FotoProfesional2.png',
+  about: '/images/FotoProfesional.png',
   avatar: 'https://media.tenor.com/cl2Xs1LDULsAAAAi/balls.gif'
 } as const
 

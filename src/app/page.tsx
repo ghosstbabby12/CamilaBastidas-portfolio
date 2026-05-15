@@ -2,16 +2,16 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import Header from '@/components/ui/Header'
-import Hero from '@/components/ui/Hero'
-import About from '@/components/ui/About'
-import Projects from '@/components/ui/Projects'
+import Header from '@/components/sections/Header'
+import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About'
+import Projects from '@/components/sections/Projects'
 import Particles from '@/components/ui/Particles'
-import Contact from '@/components/ui/Contact'
-import Experience from '@/components/ui/Experience'
-import Gallery from '@/components/ui/Gallery'
-import Testimonials from '@/components/ui/Testimonials'
-import ScrollToTopButton from '@/components/shared/ScrollToTopButton'
+import Contact from '@/components/sections/Contact'
+import Experience from '@/components/sections/Experience'
+import Gallery from '@/components/sections/Gallery'
+import Testimonials from '@/components/sections/Testimonials'
+import ScrollToTop from '@/components/ui/ScrollToTop'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -51,7 +51,7 @@ export default function Home() {
       </div>
 
       {/* Botón Scroll To Top */}
-      <ScrollToTopButton />
+      <ScrollToTop />
     </main>
   )
 }

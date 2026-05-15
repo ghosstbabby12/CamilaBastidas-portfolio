@@ -1,9 +1,9 @@
 'use client'
 import { motion } from "framer-motion"
-import Section from "@/components/shared/Section"
-import { useI18n } from '../../app/providers'
+import Section from "@/components/ui/Section"
+import { useI18n } from '@/app/providers'
 import { SOCIAL_LINKS } from '@/lib/constants'
-import { socialIconComponents } from '@/components/shared/SocialIcons'
+import { socialIconComponents } from '@/components/ui/SocialIcons'
 
 const Contact = () => {
   const { t } = useI18n()

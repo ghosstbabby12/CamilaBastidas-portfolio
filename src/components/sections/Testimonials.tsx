@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Star, Edit2, Save, X, Plus, Trash2 } from 'lucide-react'
-import { useTheme, useI18n } from '../../app/providers'
+import { useTheme, useI18n } from '@/app/providers'
 
 interface Testimonial {
   id: number
@@ -60,20 +60,16 @@ export default function Testimonials() {
     if (savedTestimonials) {
       try {
         const parsed = JSON.parse(savedTestimonials)
-        // Solo cargar si hay más de 0 testimonios guardados
         if (parsed && parsed.length > 0) {
           setTestimonials(parsed)
         } else {
-          // Si no hay testimonios guardados, usar los por defecto
           setTestimonials(defaultTestimonials)
         }
       } catch (e) {
         console.error('Error loading testimonials:', e)
-        // En caso de error, usar los testimonios por defecto
         setTestimonials(defaultTestimonials)
       }
     } else {
-      // Si no hay nada en localStorage, asegurar que se muestren los por defecto
       setTestimonials(defaultTestimonials)
     }
   }, [])

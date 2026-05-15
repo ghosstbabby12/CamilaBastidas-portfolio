@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
-import { useTheme, useI18n } from '../providers'
+import { useTheme, useI18n } from '@/app/providers'
 import { Music, Home } from 'lucide-react'
 
 export default function StrudelPage() {

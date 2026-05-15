@@ -3,10 +3,10 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Sun, Moon, Globe } from 'lucide-react'
-import { useTheme, useI18n } from '../../app/providers'
+import { useTheme, useI18n } from '@/app/providers'
 import Image from 'next/image'
 import { NAV_ITEMS, PROFILE_IMAGE } from '@/lib/constants'
-import { scrollToElement } from '@/lib/helpers/scroll'
+import { scrollToElement } from '@/lib/utils'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)

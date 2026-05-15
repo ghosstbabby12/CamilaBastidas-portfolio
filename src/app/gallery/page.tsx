@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Lock, Unlock, Sparkles, Home } from 'lucide-react'
 import { motion } from 'framer-motion'
-import { useTheme, useI18n } from '../providers'
+import { useTheme, useI18n } from '@/app/providers'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 
@@ -67,12 +67,10 @@ export default function Galeria() {
     let isCorrect = false
 
     if (Array.isArray(correct)) {
-      // Si correct es un array, verifica si la respuesta está en el array
       isCorrect = correct.some(answer =>
         normalized === answer.toLowerCase().trim().replace(/\s+/g, ' ')
       )
     } else {
-      // Si correct es un string, compara directamente
       const correctNormalized = correct.toLowerCase().trim().replace(/\s+/g, ' ')
       isCorrect = normalized === correctNormalized
     }

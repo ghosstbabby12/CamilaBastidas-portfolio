@@ -95,12 +95,12 @@ const Button = ({
 
   const buttonVariants: Variants = {
     initial: { scale: 1 },
-    hover: { 
+    hover: {
       scale: 1.05,
       y: -2,
       transition: { duration: 0.2, ease: [0.42, 0, 0.58, 1] }
     },
-    tap: { 
+    tap: {
       scale: 0.95,
       transition: { duration: 0.1 }
     }

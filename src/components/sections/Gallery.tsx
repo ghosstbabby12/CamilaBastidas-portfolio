@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { Lock, Sparkles } from 'lucide-react'
-import { useTheme, useI18n } from '../../app/providers'
+import { useTheme, useI18n } from '@/app/providers'
 
-export default function Galeria() {
+export default function Gallery() {
   const { actualTheme } = useTheme()
   const { t } = useI18n()
 
