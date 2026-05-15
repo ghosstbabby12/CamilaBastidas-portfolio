@@ -21,7 +21,7 @@ const es = {
   },
 
   hero: {
-    welcome: "Hola, soy Camila Bastidas",
+    welcome: "Camila Bastidas",
     tagline: "Desarrolladora Full Stack · Backend & APIs · IA Aplicada",
     intro: {
       part1: "",
@@ -49,7 +49,7 @@ const es = {
       student: {
         title: "Estudiante de Ingeniería de Software",
         company: "UNIVERSIDAD COOPERATIVA DE COLOMBIA",
-        period: "2021 - Actualidad",
+        period: "2023 - Actualidad",
         description: "Formación académica en desarrollo de software, algoritmos, estructuras de datos, bases de datos y metodologías ágiles. Participación activa en proyectos académicos y competencias de programación."
       },
       developer: {
@@ -67,13 +67,13 @@ const es = {
       achievements: {
         title: "Logros y Aprendizaje",
         company: "Desarrollo Continuo",
-        period: "2021 - Actualidad",
+        period: "2022 - Actualidad",
         description: "Dominio de múltiples tecnologías modernas, participación en comunidades de desarrollo, creación de proyectos que combinan arte, música y programación. Inspiración constante de los juegos retro y la cultura gamer."
       },
       competitions: {
         title: "Concursos de Programación",
         company: "Competencias Universitarias y Externas",
-        period: "2022 - Actualidad",
+        period: "2025 - Actualidad",
         description: "Participación activa en maratones de codificación, hackathons y competencias de programación dentro y fuera de la universidad. Experiencia resolviendo problemas algorítmicos bajo presión y trabajando en equipo en entornos competitivos."
       }
     },

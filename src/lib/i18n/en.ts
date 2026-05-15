@@ -20,7 +20,7 @@ const en = {
     language: "Language",
   },
   hero: {
-    welcome: "Hi, I'm Camila Bastidas",
+    welcome: "Camila Bastidas",
     tagline: "Full Stack Developer · Backend & APIs · Applied AI",
     intro: {
       part1: "",
@@ -47,7 +47,7 @@ const en = {
       student: {
         title: "Software Engineering Student",
         company: "UNIVERSIDAD COOPERATIVA DE COLOMBIA",
-        period: "2021 - Present",
+        period: "20213 - Present",
         description: "Academic training in software development, algorithms, data structures, databases and agile methodologies. Active participation in academic projects and programming competitions."
       },
       developer: {
@@ -65,13 +65,13 @@ const en = {
       achievements: {
         title: "Achievements & Learning",
         company: "Continuous Development",
-        period: "2021 - Present",
+        period: "2023 - Present",
         description: "Mastery of multiple modern technologies, participation in development communities, creation of projects that combine art, music and programming. Constant inspiration from retro games and gamer culture."
       },
       competitions: {
         title: "Programming Competitions",
         company: "University & External Competitions",
-        period: "2022 - Present",
+        period: "2025 - Present",
         description: "Active participation in coding marathons, hackathons and programming contests both inside and outside the university. Experience solving algorithmic problems under pressure and collaborating in competitive team environments."
       }
     },
